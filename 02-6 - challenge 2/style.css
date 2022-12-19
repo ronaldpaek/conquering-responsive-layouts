@@ -1,23 +1,16 @@
-/* 
+/*
 ////// For this challenge ///////
 
-- You will have to modify the HTML
-
-- You can add new classes in the HTML
-  if you need to
+- All text is in the text.md file
 
 // Requirements
-1. The headings in the first row must be
-   a different color
-2. The two .col at the bottom must go next
-   to one another
-3. The section at the bottom should have
-   a dark background color and a different
-   color of text
-4. I've removed the "gap" that I created,
-   so you'll have to add it back in
+1. Refer to the design specs for the
+   overall layout
+2. The image should line up with
+   the sidebar in the section
+   below
 
-   */
+*/
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -29,8 +22,17 @@ body {
     font-size: 1.3rem;
 }
 
+img {
+    max-width: 100%;
+}
+
 h1 {
     font-size: 3rem;
+    margin-top: 0;
+}
+
+h2 {
+    font-size: 2.25rem;
 }
 
 .container {
@@ -42,10 +44,10 @@ h1 {
 .row {
     /* display: flex => flex container */
     display: flex;
+    justify-content: space-between;
 
     /* can't use yet */
     /* gap: 100px; */
-    gap: 1em;
 }
 
 .col {
@@ -53,22 +55,24 @@ h1 {
     width: 100%;
 }
 
-.center {
-    text-align: center;
-}
-
-.purple {
-    color: #87629A;
+.col + .col {
+    margin-left: 30px;
 }
 
 .hero {
     padding: 100px 0;
     background-color: #23424A;
     color: #FFF;
+    display: flex;
+    justify-content: space-between;
 }
 
 .hero__text {
-    width: 60%;
+    width: 55%;
+}
+
+.hero__img {
+    width: 40%;
 }
 
 .hero p {
@@ -78,7 +82,7 @@ h1 {
 .btn {
     display: inline-block;
     text-decoration: none;
-    text-transform: uppercase; 
+    text-transform: uppercase;
     color: #23424A;
     font-weight: 900;
     background-color: #38CFD9;
@@ -88,18 +92,32 @@ h1 {
 
 .btn:hover,
 .btn:focus {
-    opacity: .75; 
+    opacity: .75;
 }
 
-.section1, .section2 {
-    padding: 100px 0;
+.two-col {
+    display: flex;
+    justify-content: space-between;
+    padding: 2em 0;
 }
 
-
-.section2 {
-    background: #136C72;
+.left-col {
+    width: 55%;
+    padding: 2em 0;
 }
 
-.white {
+.left-col__title {
+    color: #136C72;
+}
+
+.right-col {
+    width: 40%;
+    text-align: center;
     color: white;
+    background: #136C72;
+    padding: 2em;
+}
+
+.right-col__text {
+    line-height: 1.4;
 }
